@@ -1,4 +1,5 @@
 import "destyle.css";
+import "./app.css";
 import React, {useEffect, useState} from "react";
 import {infoAPI} from "./components/api/api";
 
