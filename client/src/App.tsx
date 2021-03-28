@@ -23,13 +23,11 @@ const App: React.FC = () => {
           </select>
         </div>
         <div className='additionalInfo'>
-
           <div className='info'>
             <p><b>Width</b></p>
             <p><b>Height</b></p>
             <p><b>Nickname</b></p>
           </div>
-
         </div>
       </div>
   )
