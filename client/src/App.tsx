@@ -1,8 +1,23 @@
 import "destyle.css";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {infoAPI} from "./components/api/api";
+
+
 
 const App: React.FC = () => {
-  let array = ['']
+    const [array, setArray] = useState(['No Rat'])
+
+
+    useEffect(() => {
+        infoAPI.searchRatNames()
+            .then(res => setArray([
+                ...res,
+                'No Rat'
+            ]))
+    }, [])
+
+
+
   return (
       <div className='container'>
         <div className='mainInfo'>
