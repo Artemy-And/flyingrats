@@ -28,12 +28,17 @@ const App: React.FC = () => {
     }, [])
 
     useEffect(() => {
+        if (stateValue !== 'No Rat') {
             infoAPI.selectedRatNames(stateValue)
                 .then(res => {
+                    let nick = res.hasOwnProperty('nickname') ? res.nickname : obj.nickname = "Uncool Rat with no Nickname"
                     setObj({
                         ...res,
-                    })})
-    }, [stateValue])
+                        nickname: nick
+                    })
+                })
+        } else setAdditionalInfo(false)
+    }, [obj.nickname, stateValue])
 
     const onChangeNew = (e: any) => {
         setStateValue(e.currentTarget.value)
@@ -51,7 +56,7 @@ const App: React.FC = () => {
               value={stateValue}
               onChange={(e) => onChangeNew(e)}>
           >
-            {array.map((e: any, index: any) => {
+            {array.map((e: string, index: number) => {
               return (
                   <option
                       defaultValue={'No Rat'}
