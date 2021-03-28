@@ -1,3 +1,4 @@
+
 .container {
     padding-top: 50px;
     justify-content: center;
@@ -21,6 +22,11 @@
     padding: 10px;
     margin: 10px;
 }
+
+.mainInfo select {
+    height: 70%;
+}
+
 
 .additionalInfo {
     width: 50%;
