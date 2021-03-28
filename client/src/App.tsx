@@ -6,6 +6,7 @@ import {infoAPI} from "./components/api/api";
 
 const App: React.FC = () => {
     const [array, setArray] = useState(['No Rat'])
+    const [stateValue, setStateValue] = useState('No Rat')
 
 
     useEffect(() => {
@@ -26,10 +27,13 @@ const App: React.FC = () => {
               className='select'
               name="rats"
               id='rats'
+              value={stateValue}
+              onChange={(e) =>    setStateValue(e.currentTarget.value)}
           >
             {array.map((e: any, index: any) => {
               return (
                   <option
+                      defaultValue={'No Rat'}
                       value={e}
                       key={index}
                   > {e}</option>
