@@ -26,6 +26,7 @@ const App: React.FC = () => {
                 ...res,
                 'No Rat'
             ]))
+            .catch(err=>alert(err))
     }, [])
 
     useEffect(() => {
